@@ -1,6 +1,6 @@
 ## Dockerfile for gitit
-FROM debian:wheezy
-MAINTAINER Hyzual "hyzual@gmail.com"
+FROM debian:stretch
+MAINTAINER Tim Skirvin "tskirvin@killfile.org"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -11,7 +11,7 @@ RUN apt-get update \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 ENV LANG en_US.utf8
 
-ENV GITIT_VERSION 0.10.0.1-1+b1
+ENV GITIT_VERSION 0.12.1.1+dfsg-6+b3
 
 ## install gitit
 RUN apt-get update \
