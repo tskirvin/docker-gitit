@@ -1,6 +1,6 @@
 ## Dockerfile for gitit
 FROM debian:stretch
-MAINTAINER Tim Skirvin "tskirvin@killfile.org"
+MAINTAINER Tim Skirvin "tskirvin@fnal.gov"
 
 ENV DEBIAN_FRONTEND noninteractive
 
