@@ -1,5 +1,5 @@
 ## Dockerfile for gitit
-FROM debian:stretch
+FROM debian:sid
 MAINTAINER Tim Skirvin "tskirvin@fnal.gov"
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -11,11 +11,9 @@ RUN apt-get update \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 ENV LANG en_US.utf8
 
-ENV GITIT_VERSION 0.12.1.1+dfsg-6+b3
-
 ## install gitit
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends mime-support gitit=$GITIT_VERSION \
+    && apt-get install -y --no-install-recommends procps mime-support gitit libghc-filestore-data \
     && rm -rf /var/lib/apt/lists/*
 
 VOLUME ["/data"]
